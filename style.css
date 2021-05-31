@@ -1,0 +1,371 @@
+<style>
+* {
+	box-sizing: border-box;
+}
+html{
+	background-size : cover;
+	height		: 100%;
+}
+body {
+font-family:Lucida Sans Unicode;
+color:#aaaaaa;
+}
+
+#banner, header, nav, footer{
+position:relative;
+z-index:2;
+}
+
+header img{
+opacity:1;
+}
+
+.imgbox {
+display:table;
+
+position:fixed;
+top:0px;
+z-index:-1;
+}
+
+.bg{
+max-width: 100%;
+max-height: 100vh;
+margin: auto;
+filter: blur(3.5px);
+-webkit-filter: blur(3.5px);	
+}
+
+#container{
+position:relative;
+margin:0;
+width: 100%;
+display:table;
+height:100%;
+}
+
+#banner{
+background-color:#B3E6FA;
+height:300;
+position: relative;
+top:0px;
+display: table;
+width: 100%;
+opacity:0.9;
+z-index:2;
+}
+
+header{
+padding:15px;
+text-align:center;
+}
+
+nav {
+float:left;
+width:10%;
+text-align:center;
+position:relative;
+}
+nav a{  
+color    	: gray;
+display		: block;
+padding		: 15px;
+text-decoration : none;
+background-color: #FBE3EE;
+width:100%;
+margin-top:30px;
+}
+nav a:active{
+background-color: #F9ECD2;
+color: lightgray;
+}
+
+nav a:hover {
+	background-color: #D6CEEB;
+	color:white;
+}
+main {
+float:right;
+width:85%;
+padding:0 10px;
+position:relative;
+}
+
+footer {
+clear: both;
+position: relative;
+height: 100px;
+margin-top: 0px;
+padding-top:20px;
+background-color:#B3E6FA;
+text-align: center;
+color: white;
+opacity:0.9;
+}
+
+div.gallery {
+  margin: 6px;
+  margin-left:50px;
+  margin-right:auto;
+  border: 1px solid #ccc;
+  float: left;
+  width: 200px;
+  margin-top:30px
+  height:320px;
+color:white;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.1); /* Black w/opacity/see-through */
+}
+div.desc{
+height:50px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: 140px;
+}
+div.gallery img:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+
+ul.breadcrumb {
+margin-top:30px;
+position:relative;
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+opacity:0.9;
+color:gray;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/*photobox and description*/
+.abim{
+float: right;
+padding: 2em;
+height:200px;
+}
+.item p{
+padding-left: 20px;
+position:relative;
+color:white;
+}
+.item img{
+padding:20px;
+}
+.item{
+margin-bottom:20px;
+border: thin solid white;
+height: 250px;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+padding:20px;
+margin-top:20px;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.1); /* Black w/opacity/see-through */
+}
+.item h2{
+padding-left: 20px;
+color: white;
+}
+
+
+.intro{
+padding-bottom:20px;
+}
+
+
+/* button setting */
+.arrow{
+  font-size:1.3em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.arrow i{
+vertical-align:middle;
+}
+#f3{
+dispay:block;
+margin-left:auto;
+margin-right:auto;
+position:absolute;
+margin-bottom:0px;
+}
+
+
+
+
+/*slides*/
+.slide {
+height:500px;
+  position: relative;
+}
+
+.myslides img {
+  vertical-align: middle;
+}
+
+.myslides{
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+
+
+/* Style contact form inputs */
+
+.cnt input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.cnt input[type=submit] {
+  background-color: #FBE3EE;
+  color: gray;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.cnt input[type=submit]:hover {
+  background-color: #D6CEEB;
+color:white;
+}
+
+/* Style the container/contact section */
+.cnt {
+  border-radius: 5px;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.1); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.cnt .column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.cnt .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+</style>
